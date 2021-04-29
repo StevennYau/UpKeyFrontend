@@ -24,7 +24,7 @@ function NavBar() {
           <li className="nav-item">
              <Link href="/cart">
                <a className={"nav-link" + isActive('/cart')}>
-                  <i className="fas fa-shopping-cart"></i>Cart
+                  <i className="fas fa-shopping-cart" aria-hidden="true"></i>Cart
                </a>
              </Link>
           </li>
@@ -32,7 +32,7 @@ function NavBar() {
           <li className="nav-item">
              <Link href="/signin">
              <a className={"nav-link" + isActive('/signin')}>
-                <i className="fas fa-user"></i>Sign In
+                <i className="fas fa-user" aria-hidden="true"></i>Sign In
              </a>
              </Link>
           </li>
