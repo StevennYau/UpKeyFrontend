@@ -4,7 +4,8 @@
     const res = await fetch(`${baseUrl}/api/${url}`, {
        method: 'GET',
        headers: {
-          'Authorization': token
+          'Authorization': token,
+          'User-Agent': '*'
        }
     })
 

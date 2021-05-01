@@ -1,0 +1,27 @@
+.keyboards{
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+   justify-content: center;
+   margin: 20px 0;
+}
+
+.keyboards .card {
+   margin: 10px auto;
+}
+.keyboards .card-img-top {
+   height: 250px;
+   width: 100%;
+}
+
+.keyboards .card-title {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.keyboards .card-text {
+   height: 70px;
+   overflow: hidden;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 3;
+}
