@@ -1,8 +1,14 @@
-import Product from "../../pages/product"
 import Link from 'next/link'
+import { useContext } from 'react'
+import { DataContext } from '../../store/GlobalState'
+import { addToCart } from '../../store/Actions'
 
 const KeyboardItem = ({keyboard}) => {
+   const { state, dispatch } = useContext(DataContext)
+   const { cart, auth } = state
 
+ 
+ 
    const userLink = () => {
       return (
          <>
@@ -11,8 +17,15 @@ const KeyboardItem = ({keyboard}) => {
                style={{marginRight: '5px', flex: 1}}>View</a>
             </Link>
             <button className="btn btn-success"
-            style={{marginRight: '5px', flex: 1}}>
-               Buy
+            style={{marginRight: '5px', flex: 1}}
+            onClick={() => {
+               if (Object.keys(auth).length !== 0) {
+                  dispatch(addToCart(keyboard, cart))
+               } else {
+                  dispatch({ type: 'NOTIFY', payload: {error: "Please Login To Add To Cart"}})
+               }
+            }}>
+               Add To Cart
             </button>
          </>
       )

@@ -19,6 +19,21 @@ imt{
   object-fit: cover;
 }
 
+.emptyCart{
+  width: 700px;
+  height: auto;
+  padding-top: 100px;
+}
+
+.kbTitle{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+
+
 /* --------- Loading -------- */
 @import url("./loading.css");
 
