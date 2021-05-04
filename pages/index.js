@@ -53,8 +53,20 @@ const Home = (props) => {
         {
           props.result < page * 12 ? ""
           : <button className="btn btn-outline-info d-block mx-auto mb-4 button"
-          onClick={handleLoadMore}>
-            Load More
+          onClick={handleLoadLess}>
+            Load Less
+          </button>
+        }
+      </div>
+
+      
+
+      <div>
+        {
+          props.result < page * 12 ? ""
+          : <button className="btn btn-outline-info d-block mx-auto mb-4 button invisible"
+          >
+            Load Less
           </button>
         }
       </div>
@@ -62,9 +74,41 @@ const Home = (props) => {
       <div>
         {
           props.result < page * 12 ? ""
-          : <button className="btn btn-outline-info d-block mx-auto mb-4 button"
-          onClick={handleLoadLess}>
+          : <button className="btn btn-outline-info d-block mx-auto mb-4 button invisible"
+          >
             Load Less
+          </button>
+        }
+      </div>
+
+      <div>
+        {
+          props.result < page * 12 ? ""
+          : <button className="btn btn-outline-info d-block mx-auto mb-4 button invisible"
+          >
+            Load Less
+          </button>
+        }
+      </div>
+
+
+      <div>
+        {
+          props.result < page * 12 ? ""
+          : <button className="btn btn-outline-info d-block mx-auto mb-4 button invisible"
+          >
+            Load Less
+          </button>
+        }
+      </div>
+
+
+      <div>
+        {
+          props.result < page * 12 ? ""
+          : <button className="btn btn-outline-info d-block mx-auto mb-4 button"
+          onClick={handleLoadMore}>
+            Load More
           </button>
         }
       </div>
