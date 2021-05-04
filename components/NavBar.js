@@ -1,8 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 import { DataContext } from '../store/GlobalState'
 import Cookie from 'js-cookie'
+import Filter from './Filter'
+import filterSearch from '../utils/filterSearch'
 
 function NavBar() {
    const router = useRouter()
@@ -49,6 +51,9 @@ function NavBar() {
       <Link href="/">
          <a className="navbar-brand" >UpKey</a>
       </Link>
+      {
+         router.pathname === '/' && <div className="form-inline"> Search: <Filter state={state}/></div>
+      }
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>

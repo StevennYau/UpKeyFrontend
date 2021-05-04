@@ -32,6 +32,11 @@ imt{
   max-width: 250px;
 }
 
+.searchBar{
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
 
 
 /* --------- Loading -------- */

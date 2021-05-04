@@ -21,15 +21,14 @@ class APIfeatures {
       const excludeFields = ['page', 'sort', 'limit']
       excludeFields.forEach(el => delete(queryObj[el]))
 
-      if (queryObj.category !== 'all') {
-         this.query.find({category: queryObj.category})
-      }
-
       if (queryObj.Name !== 'all') {
-         this.query.find({Name: {$regex: queryObj.Name}})
+         this.query.find({Name: {"$regex": queryObj.Name, "$options": "i"}}).then(kb => {
+            console.log(kb);
+         })
       }
 
       this.query.find()
+      
       return this;
    }
 

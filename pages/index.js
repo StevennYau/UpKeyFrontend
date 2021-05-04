@@ -1,15 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { connectToKbDatabase } from '../utils/connectToKbDatabase'
 import Head from 'next/head'
 import { getData } from '../utils/fetchData'
 import KeyboardItem from '../components/keyboard/KeyboardItem'
 import filterSearch  from '../utils/filterSearch'
 import { useRouter } from 'next/router'
+import Filter from '../components/Filter'
+import {DataContext} from '../store/GlobalState'
 
 const Home = (props) => {
   const [keyboards, setKeyboards] = useState(props.keyboards)
   const [page, setPage] = useState(1)
   const router = useRouter()
+  const {state, dispatch} = useContext(DataContext)
+  const {auth} = state
 
   useEffect(() => {
     setKeyboards(props.keyboards)
@@ -36,35 +40,34 @@ const Home = (props) => {
       <Head>
         <title>Home Page</title>
       </Head>
-
      
+      {
+        (keyboards === undefined || keyboards.length === 0)
+        ? <h2>No Products</h2>
+        : keyboards.map(kb => (
+          <KeyboardItem key={kb._id} keyboard={ kb } />
+        ))
+      }
+
+      <div>
         {
-          (keyboards === undefined || keyboards.length === 0)
-          ? <h2>No Products</h2>
-          : keyboards.map(kb => (
-            <KeyboardItem key={kb._id} keyboard={ kb } />
-          ))
+          props.result < page * 12 ? ""
+          : <button className="btn btn-outline-info d-block mx-auto mb-4 button"
+          onClick={handleLoadMore}>
+            Load More
+          </button>
         }
+      </div>
 
-        <div>
-          {
-            props.result < page * 12 ? ""
-            : <button className="btn btn-outline-info d-block mx-auto mb-4 button"
-            onClick={handleLoadMore}>
-              Load More
-            </button>
-          }
-        </div>
-
-        <div>
-          {
-            props.result < page * 12 ? ""
-            : <button className="btn btn-outline-info d-block mx-auto mb-4 button"
-            onClick={handleLoadLess}>
-              Load Less
-            </button>
-          }
-        </div>
+      <div>
+        {
+          props.result < page * 12 ? ""
+          : <button className="btn btn-outline-info d-block mx-auto mb-4 button"
+          onClick={handleLoadLess}>
+            Load Less
+          </button>
+        }
+      </div>
     </div>
   )
 }
@@ -82,16 +85,18 @@ const Home = (props) => {
 }    */
 
  export async function getServerSideProps({query}) {
+   console.log("in server side props")
   const page = query.page || 1
   const category = query.category || 'all'
   const search = query.search || 'all'
   
   var res = await getData(`keyboard?limit=${page * 12}&category=${category}&Name=${search}`)
-  console.log(res)
 
   if(res.keyboards === undefined) {
     res = await getData(`keyboard?limit=${page * 12}&category=${category}&Name=${search}`)
   }
+
+
 
   /* if(res.keyboards === undefined) {
     return {
