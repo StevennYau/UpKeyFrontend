@@ -34,22 +34,8 @@ public class EbayKeyboard
     public string Image { get; set; }
 }
  ```
-
-## Frontend Dependencies
-The dependencies used in this project and that should be installed are:
+### User
 ```javascript
-"bcrypt": "^5.0.1",
-"dns": "^0.2.2",
-"js-cookie": "^2.2.1",
-"jsonwebtoken": "^8.5.1",
-"mongoose": "^5.12.6",
-"net": "^1.0.2",
-"next": "10.2.0",
-"react": "17.0.2",
-"react-dom": "17.0.2"
-```
-
-```mongoose
 const userSchema = new mongoose.Schema({
    name: {
       type: String,
@@ -80,6 +66,22 @@ const userSchema = new mongoose.Schema({
    timestamps: true
 })
 ```
+
+## Frontend Dependencies
+The dependencies used in this project and that should be installed are:
+```javascript
+"bcrypt": "^5.0.1",
+"dns": "^0.2.2",
+"js-cookie": "^2.2.1",
+"jsonwebtoken": "^8.5.1",
+"mongoose": "^5.12.6",
+"net": "^1.0.2",
+"next": "10.2.0",
+"react": "17.0.2",
+"react-dom": "17.0.2"
+```
+
+
 
 ## Backend Dependencies
 ```ASP.NET
