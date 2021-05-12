@@ -37,28 +37,16 @@ public class EbayKeyboard
 
 ## Frontend Dependencies
 The dependencies used in this project and that should be installed are:
-```
-"@angular/animations": "^11.2.3",
-"@angular/cdk": "^11.2.2",
-"@angular/common": "~11.2.1",
-"@angular/compiler": "~11.2.1",
-"@angular/core": "~11.2.1",
-"@angular/flex-layout": "^11.0.0-beta.33",
-"@angular/forms": "~11.2.1",
-"@angular/material": "^11.2.2",
-"@angular/platform-browser": "~11.2.1",
-"@angular/platform-browser-dynamic": "~11.2.1",
-"@angular/router": "~11.2.1",
-"@fortawesome/fontawesome-free": "^5.15.2",
-"@types/chart.js": "^2.9.31",
-"@types/googlemaps": "^3.39.13",
-"angular-bootstrap-md": "^11.0.0",
-"animate.css": "^4.1.1",
-"chart.js": "^2.5.0",
-"hammerjs": "^2.0.8",
-"rxjs": "~6.6.0",
-"tslib": "^2.0.0",
-"zone.js": "~0.11.3"
+```javascript
+"bcrypt": "^5.0.1",
+"dns": "^0.2.2",
+"js-cookie": "^2.2.1",
+"jsonwebtoken": "^8.5.1",
+"mongoose": "^5.12.6",
+"net": "^1.0.2",
+"next": "10.2.0",
+"react": "17.0.2",
+"react-dom": "17.0.2"
 ```
 
 ## Backend Dependencies
