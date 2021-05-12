@@ -63,9 +63,11 @@ The dependencies used in this project and that should be installed are:
 
 ## Backend Dependencies
 ```c#
-<PackageReference Include="HtmlAgilityPack" Version="1.11.33" />
-<PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0-preview.3.21201.4" />
-<PackageReference Include="MongoDB.Bson" Version="2.13.0-beta1" />
-<PackageReference Include="MongoDB.Driver" Version="2.13.0-beta1" />
+<ItemGroup>
+      <PackageReference Include="HtmlAgilityPack" Version="1.11.33" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0-preview.3.21201.4" />
+      <PackageReference Include="MongoDB.Bson" Version="2.13.0-beta1" />
+      <PackageReference Include="MongoDB.Driver" Version="2.13.0-beta1" />
+    </ItemGroup>
  ```
 
