@@ -35,7 +35,7 @@ public class EbayKeyboard
 }
  ```
 
-## Frontend Dependancies
+## Frontend Dependencies
 The dependencies used in this project and that should be installed are:
 ```
 "@angular/animations": "^11.2.3",
@@ -61,7 +61,7 @@ The dependencies used in this project and that should be installed are:
 "zone.js": "~0.11.3"
 ```
 
-## Backend Dependancies
+## Backend Dependencies
 ```c#
 <PackageReference Include="HtmlAgilityPack" Version="1.11.33" />
 <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0-preview.3.21201.4" />
