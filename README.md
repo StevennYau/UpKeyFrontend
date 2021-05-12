@@ -49,6 +49,38 @@ The dependencies used in this project and that should be installed are:
 "react-dom": "17.0.2"
 ```
 
+```mongoose
+const userSchema = new mongoose.Schema({
+   name: {
+      type: String,
+      required: true
+   },
+   email: {
+      type: String,
+      required: true,
+      unique: true
+   },
+   password: {
+      type: String,
+      required: true
+   },
+   role: {
+      type: String,
+      default: 'user'
+   },
+   root: {
+      type: Boolean,
+      default: false
+   },
+   avatar: {
+      type: String,
+      default: 'https://res.cloudinary.com/djvcz33mm/image/upload/v1619660571/guest-user_kpk4c0.jpg'
+   }
+}, {
+   timestamps: true
+})
+```
+
 ## Backend Dependencies
 ```ASP.NET
 <PackageReference Include="HtmlAgilityPack" Version="1.11.33" />
